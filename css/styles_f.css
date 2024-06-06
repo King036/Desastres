@@ -1,0 +1,386 @@
+/* Reseta as margens e preenchimentos padrão */
+body, html {
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fundo {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top:0%;
+    background-image: url('/img/faseFundo.png');
+    background-position: center;
+    background-repeat: repeat;
+    background-size: contain;
+    z-index: 0;
+}
+.barraMenu{
+    height: 90px;
+    width:100%;
+    background-color: black;
+    z-index: 1;
+}
+.menu{
+    width: 80px;
+    position: absolute;
+    left: 3%;
+    top: 1%;
+    cursor: pointer;
+}
+.lixeira{
+    width: 60px;
+    position: absolute;
+    right: 3%;
+    top: 0%;
+    cursor: pointer;
+}
+.video{
+    margin-top:15%;
+    margin-left: -4%;
+    z-index: 0;
+}
+
+/*
+.alagado {
+    position: absolute;
+    width: 100%;
+    height: 650px;
+    bottom: 0;
+}
+
+.personagemParadoUm {
+    width: 110px;
+    position: absolute;
+    left: 50%;
+    top: 15%;
+}
+
+
+
+
+
+.caixaDialogo {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+.Dialogo {
+    width: 85%;
+    position: absolute;
+    bottom: 10%;
+}
+
+.caixaDialogoBoneco{
+    width: 180px;
+    position: absolute;
+    right: 1%;
+    bottom: 0%;
+}
+
+
+
+*/
+
+.latinha {
+    width: 150px;
+    position: absolute;
+    cursor: pointer;
+    
+}
+
+.banana {
+    width: 150px;
+    position: absolute;
+    left: 25%;
+    bottom: 23%;
+    cursor: pointer;
+}
+
+.caixinha{
+    width: 150px;
+    position: absolute;
+    left: 45%;
+    bottom: 23%;
+    cursor: pointer;
+}
+
+.garrafa{
+    width: 150px;
+    position: absolute;
+    left: 65%;
+    bottom: 23%;
+    cursor: pointer;
+}
+
+.lixo{
+    width: 150px;
+    position: absolute;
+    left: 85%;
+    bottom: 23%;
+    cursor: pointer;
+}
+
+.maca{
+    width: 150px;
+    position: absolute;
+    left: 78%;
+    bottom: 45%;
+    cursor: pointer;
+}
+
+.papelao{
+    width: 150px;
+    position: absolute;
+    left: 58%;
+    bottom: 45%;
+    cursor: pointer;
+}
+
+.sacola{
+    width: 150px;
+    position: absolute;
+    left: 38%;
+    bottom: 45%;
+    cursor: pointer;
+}
+
+.vidro{
+    width: 150px;
+    position: absolute;
+    left: 18%;
+    bottom: 45%;
+    cursor: pointer;
+}
+
+.retanguloSuperior{
+    width: 100%;
+    position: absolute;
+    
+    cursor: pointer;
+}
+.river {
+    top:100px;
+    position: absolute;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.object {
+    position: absolute;
+    z-index: 2;
+    width: 50px;
+    height: 50px;
+    animation: floatDown 10s linear infinite;
+}
+
+@keyframes floatDown {
+    0% {
+        top: -50px;
+        left: 20%;
+    }
+    25% {
+        left: 30%;
+    }
+    50% {
+        top: 100%;
+        left: 40%;
+    }
+    75% {
+        left: 50%;
+    }
+    100% {
+        top: -50px;
+        left: 20%;
+    }
+}
+
+/* Add some variety */
+.object:nth-child(2) {
+    animation-delay: 3s;
+}
+
+.object:nth-child(3) {
+    animation-delay: 6s;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.menu-screen {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 100;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.menu-screen .fundoMenu {
+    width: 700px;
+    height: 100%;
+    left: 0%;
+    position: absolute;
+    border: 2px solid white;
+}
+
+/* Estilo geral para botões de menu */
+.menu-button {
+    position: absolute;
+}
+
+#voltarInicio {
+    width: 400px;
+    left: 6%;
+    bottom: 2%;
+    cursor: pointer;
+}
+
+#linha1{
+    width: 700px;
+    left: 0%;
+    bottom: 13%;
+    position: absolute;
+}
+
+#teclas{
+    width: 200px;
+    left: 3%;
+    bottom: 17%;
+    position: absolute;
+}
+
+#paraAndar{
+    width: 160px;
+    left: 1%;
+    bottom: 32%;
+    position: absolute;
+}
+
+#mouse{
+    width: 100px;
+    left: 25%;
+    bottom: 17%;
+    position: absolute;
+}
+
+#paraClicar{
+    width: 280px;
+    left: 17%;
+    bottom: 32%;
+    position: absolute;
+}
+
+#linha2{
+    width: 700px;
+    left: 0%;
+    bottom: 40%;
+    position: absolute;
+}
+
+#fase1{
+    width: 250px;
+    left: 20%;
+    bottom: 45%;
+    position: absolute;
+    cursor: pointer;
+}
+
+#fase2{
+    width: 250px;
+    left: 2%;
+    bottom: 45%;
+    position: absolute;
+    cursor: pointer;
+}
+
+#outraFase{
+    width: 280px;
+    left: 1%;
+    bottom: 62%;
+    position: absolute;
+}
+
+#linha5{
+    width: 700px;
+    left: 0%;
+    bottom: 66%;
+    position: absolute;
+}
+
+
+#imgAudio{
+    width: 100px;
+    left: 1%;
+    bottom: 70%;
+    position: absolute;
+    cursor: pointer;
+}
+
+#volumeTxt{
+    width: 220px;
+    left: 1%;
+    bottom: 80%;
+    position: absolute;
+    cursor: pointer;
+}
+
+#controleVolume{
+    width: 20px;
+    height: 35px;
+    left: 8%;
+    bottom: 71%;
+    position: absolute;
+    cursor: pointer;
+    display: flex;
+    transform: translate(-50%, -50%);
+    align-items: center;
+    
+}
+
+#linha3{
+    width: 220px;
+    left: 8%;
+    bottom: 74%;
+    position: absolute;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
