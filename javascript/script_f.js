@@ -1,4 +1,8 @@
+
 document.addEventListener("DOMContentLoaded", () => {
+    contator = 0;
+
+
     // Seleciona todos os objetos interativos e o lixo
     const objects = document.querySelectorAll(".latinha, .banana, .caixinha, .garrafa, .maca, .papelao, .sacola, .vidro, .lixo");
     const trash = document.querySelector(".lixeira");
@@ -25,10 +29,17 @@ document.addEventListener("DOMContentLoaded", () => {
             const remainingObjects = document.querySelectorAll(".latinha, .banana, .caixinha, .garrafa, .maca, .papelao, .sacola, .vidro");
             if (remainingObjects.length === 0) {
                 alert("Parabéns! Você limpou todos os objetos da água!");
-                transitionToNextPhase(); // Transição para a próxima fase
+                for (let index = 0; index < 21; index++) {
+
+                    setTimeout(() => { transitionToNextPhase() }, 2000);
+
+                }
+
+
             }
         } else {
             alert("Selecione um objeto primeiro!");
+
         }
     });
 
@@ -49,18 +60,30 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Função para transição para a próxima ètapa da fase
     function transitionToNextPhase() {
-        const fundo = document.getElementById("fundo");
-        const alagado = document.getElementById("alagado");
+        let pos = 0;
+        const interval = setInterval(frame, 20);
+        const fundo = document.getElementById("video");
 
         // Substitua os caminhos para as novas imagens
-        fundo.src = "htmlcssjsFASE1\imgs\Rectangle 17.png";
-        alagado.src = "imgs/novo_alagado.png";
+        function frame() {
+            if (pos >= 350) {
+                clearInterval(interval);
+            } else {
+                pos++;
+                fundo.style.marginTop = pos+'%';
+            }
+        }
+
+
+
+
+
     }
 
-    
- 
+
+
 });
-const text = "Para inserirmos uma tag âncora através do JavaScript podemos criar uma variável, que chamamos no exemplo abaixo de element, e atribuir à ela o que estiver dentro de um elemento html , por meio do comando document.getElementById(), identificado pelo seu id, que no exemplo chamamos de identificacao.";
+const text = "O bairro está alagado por conta do excesso de lixo,o que podemos fazerpara resolver isso?Click no lixo e depois na lixeira para recolher-los          ";
 let index = 0;
 
 function typeWriter() {
@@ -68,10 +91,15 @@ function typeWriter() {
         document.getElementById("textdialogo").innerHTML += text.charAt(index);
         index++;
         setTimeout(typeWriter, 100); // Adjust the typing speed here (100ms per character)
-        if (index%70==0) {
+        if (index % 70 == 0) {
             document.getElementById("textdialogo").innerHTML += ' <br> '
         }
+
     }
+    if (index == 150) {
+        document.getElementById("dialogo").style.display = 'none';
+    }
+    console.log(index);
 }
 
 document.addEventListener("DOMContentLoaded", typeWriter);
