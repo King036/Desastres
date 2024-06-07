@@ -39,7 +39,7 @@ body, html {
     top: 0%;
     cursor: pointer;
 }
-.video{
+#video{
     margin-top:15%;
     margin-left: -4%;
 }
@@ -64,7 +64,7 @@ body, html {
 
 
 */
-.dialogo{
+#dialogo{
     top: 50%;
     margin: 5%;
     position: absolute;
@@ -148,38 +148,38 @@ body, html {
 
 /* Add some variety */
 #object:nth-child(1) {
-    animation-delay: 3s;
+    animation-delay: 15s;
     
 
 }
 
 #object:nth-child(2) {
-    animation-delay: 4s;
+    animation-delay: 16s;
    
 }
 #object:nth-child(3) {
-    animation-delay: 5s;
+    animation-delay: 17s;
 }
 
 #object:nth-child(4) {
-    animation-delay: 6s;
+    animation-delay: 18s;
 }
 #object:nth-child(5) {
-    animation-delay: 7s;
+    animation-delay: 19s;
 }
 
 #object:nth-child(6) {
-    animation-delay: 8s;
+    animation-delay: 20s;
 }
 #object:nth-child(7) {
-    animation-delay: 9s;
+    animation-delay: 21s;
 }
 
 #object:nth-child(8) {
-    animation-delay: 10s;
+    animation-delay: 22s;
 }
 #object:nth-child(9) {
-    animation-delay: 11s;
+    animation-delay: 23s;
 }
 
 
