@@ -60,4 +60,18 @@ document.addEventListener("DOMContentLoaded", () => {
     
  
 });
+const text = "Para inserirmos uma tag âncora através do JavaScript podemos criar uma variável, que chamamos no exemplo abaixo de element, e atribuir à ela o que estiver dentro de um elemento html , por meio do comando document.getElementById(), identificado pelo seu id, que no exemplo chamamos de identificacao.";
+let index = 0;
 
+function typeWriter() {
+    if (index < text.length) {
+        document.getElementById("textdialogo").innerHTML += text.charAt(index);
+        index++;
+        setTimeout(typeWriter, 100); // Adjust the typing speed here (100ms per character)
+        if (index%70==0) {
+            document.getElementById("textdialogo").innerHTML += ' <br> '
+        }
+    }
+}
+
+document.addEventListener("DOMContentLoaded", typeWriter);
