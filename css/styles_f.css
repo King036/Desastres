@@ -1,5 +1,6 @@
 /* Reseta as margens e preenchimentos padrão */
-body, html {
+body,
+html {
     margin: 0;
     overflow: hidden;
     padding: 0;
@@ -12,91 +13,106 @@ body, html {
     position: absolute;
     width: 100%;
     height: 100%;
-    top:0%;
+    top: 0%;
     background-image: url('/img/faseFundo.png');
     background-position: center;
     background-repeat: repeat;
     background-size: contain;
     z-index: 0;
 }
-.barraMenu{
+
+.barraMenu {
     height: 90px;
-    width:100%;
+    width: 100%;
     background-color: black;
     z-index: 1;
 }
-.menu{
+
+.menu {
     width: 80px;
     position: absolute;
     left: 3%;
     top: 1%;
     cursor: pointer;
 }
-.lixeira{
+
+.lixeira {
     width: 60px;
     position: absolute;
     right: 3%;
     top: 0%;
     cursor: pointer;
 }
-#video{
-    margin-top:15%;
+#timer {
+   
+    margin-left:50%;
+    font-size: 3em;
+    color: blue;
+}
+
+#video {
+    margin-top: 15%;
     margin-left: -4%;
 }
 
-#personagem{
+#personagem {
     position: absolute;
-    width: 600px;
+    width: 500px;
     height: 120px;
    
-    margin-top: 25%;
-    margin-left:-15% ;
-    z-index: 1;
+    margin-top: -40%;
+    margin-left: 23%;
+    
+    z-index: 2;
 }
-#imgPerson{
+
+#imgPerson {
     position: absolute;
     width: 120px;
     height: 90px;
+    z-index: 2;
 }
 
 
 
 
 
-#dialogo{
+#dialogo {
     top: 50%;
     margin: 5%;
     position: absolute;
     background-color: black;
     opacity: 80%;
     width: 1200px;
-    z-index: 2;
+    z-index: 3;
 }
-#textdialogo{
+
+#textdialogo {
     color: antiquewhite;
     margin-left: 10px;
     width: 1000px;
-     /* Cursor effect */
+    /* Cursor effect */
     white-space: nowrap;
     overflow: hidden;
 }
 
 
-#PDimagem{
-   margin-top: 20px;
-    
+#PDimagem {
+    margin-top: 20px;
     width: 150px;
     height: 150px;
 }
-.coluna{
+
+.coluna {
     display: inline-block;
     width: 500px;
     box-sizing: border-box;
     vertical-align: top;
     z-index: 2;
 }
+
 .river {
-    top:300px;
+    top: 300px;
     position: absolute;
     width: 100%;
     height: 300px;
@@ -109,7 +125,7 @@ body, html {
     width: 0px;
     height: 0px;
     z-index: 0;
-    animation: floatDown 10s linear infinite ;
+    animation: floatDown 10s linear infinite;
 }
 
 @keyframes floatDown {
@@ -118,25 +134,29 @@ body, html {
         left: -11%;
         width: 100px;
         height: 100px;
-       
+
     }
+
     25% {
         left: 40%;
         width: 100px;
         height: 100px;
-        
+
     }
+
     50% {
         top: 70%;
         left: 50%;
         width: 100px;
         height: 100px;
     }
+
     75% {
         left: 60%;
         width: 100px;
         height: 100px;
     }
+
     100% {
         top: -50px;
         left: 100%;
@@ -148,14 +168,15 @@ body, html {
 /* Add some variety */
 #object:nth-child(1) {
     animation-delay: 15s;
-    
+
 
 }
 
 #object:nth-child(2) {
     animation-delay: 16s;
-   
+
 }
+
 #object:nth-child(3) {
     animation-delay: 17s;
 }
@@ -163,6 +184,7 @@ body, html {
 #object:nth-child(4) {
     animation-delay: 18s;
 }
+
 #object:nth-child(5) {
     animation-delay: 19s;
 }
@@ -170,6 +192,7 @@ body, html {
 #object:nth-child(6) {
     animation-delay: 20s;
 }
+
 #object:nth-child(7) {
     animation-delay: 21s;
 }
@@ -177,15 +200,25 @@ body, html {
 #object:nth-child(8) {
     animation-delay: 22s;
 }
+
 #object:nth-child(9) {
     animation-delay: 23s;
 }
 
 
+.tree {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: url('/img/flores.png') no-repeat center center / contain;
 
-
-
-
+}
+#areaPlantio{
+  
+    height: 40px;
+    margin-top: 33%;
+    z-index: 2;
+}
 
 
 
@@ -231,49 +264,49 @@ body, html {
     cursor: pointer;
 }
 
-#linha1{
+#linha1 {
     width: 700px;
     left: 0%;
     bottom: 13%;
     position: absolute;
 }
 
-#teclas{
+#teclas {
     width: 200px;
     left: 3%;
     bottom: 17%;
     position: absolute;
 }
 
-#paraAndar{
+#paraAndar {
     width: 160px;
     left: 1%;
     bottom: 32%;
     position: absolute;
 }
 
-#mouse{
+#mouse {
     width: 100px;
     left: 25%;
     bottom: 17%;
     position: absolute;
 }
 
-#paraClicar{
+#paraClicar {
     width: 280px;
     left: 17%;
     bottom: 32%;
     position: absolute;
 }
 
-#linha2{
+#linha2 {
     width: 700px;
     left: 0%;
     bottom: 40%;
     position: absolute;
 }
 
-#fase1{
+#fase1 {
     width: 250px;
     left: 20%;
     bottom: 45%;
@@ -281,7 +314,7 @@ body, html {
     cursor: pointer;
 }
 
-#fase2{
+#fase2 {
     width: 250px;
     left: 2%;
     bottom: 45%;
@@ -289,14 +322,14 @@ body, html {
     cursor: pointer;
 }
 
-#outraFase{
+#outraFase {
     width: 280px;
     left: 1%;
     bottom: 62%;
     position: absolute;
 }
 
-#linha5{
+#linha5 {
     width: 700px;
     left: 0%;
     bottom: 66%;
@@ -304,7 +337,7 @@ body, html {
 }
 
 
-#imgAudio{
+#imgAudio {
     width: 100px;
     left: 1%;
     bottom: 70%;
@@ -312,7 +345,7 @@ body, html {
     cursor: pointer;
 }
 
-#volumeTxt{
+#volumeTxt {
     width: 220px;
     left: 1%;
     bottom: 80%;
@@ -320,7 +353,7 @@ body, html {
     cursor: pointer;
 }
 
-#controleVolume{
+#controleVolume {
     width: 20px;
     height: 35px;
     left: 8%;
@@ -330,30 +363,13 @@ body, html {
     display: flex;
     transform: translate(-50%, -50%);
     align-items: center;
-    
+
 }
 
-#linha3{
+#linha3 {
     width: 220px;
     left: 8%;
     bottom: 74%;
     position: absolute;
     cursor: pointer;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
