@@ -8,7 +8,7 @@ body, html {
     align-items: center;
 }
 
-.fundo {
+#fundo {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -44,26 +44,25 @@ body, html {
     margin-left: -4%;
 }
 
-/*
-.alagado {
+#personagem{
     position: absolute;
-    width: 100%;
-    height: 650px;
-    bottom: 0;
+    width: 600px;
+    height: 120px;
+   
+    margin-top: 25%;
+    margin-left:-15% ;
+    z-index: 1;
+}
+#imgPerson{
+    position: absolute;
+    width: 120px;
+    height: 90px;
 }
 
-.personagemParadoUm {
-    width: 110px;
-    position: absolute;
-    left: 50%;
-    top: 15%;
-}
 
 
 
 
-
-*/
 #dialogo{
     top: 50%;
     margin: 5%;
