@@ -63,11 +63,13 @@ document.addEventListener("DOMContentLoaded", () => {
         let pos = 0;
         const interval = setInterval(frame, 20);
         const fundo = document.getElementById("video");
+        const fundo1 = document.getElementById("fundo");
 
         // Substitua os caminhos para as novas imagens
         function frame() {
             if (pos >= 350) {
                 clearInterval(interval);
+                fundo1.style.backgroundImage= "url(img/CasaDepoisDaInundação.png)"
             } else {
                 pos++;
                 fundo.style.marginTop = pos+'%';
@@ -103,3 +105,39 @@ function typeWriter() {
 }
 
 document.addEventListener("DOMContentLoaded", typeWriter);
+
+document.addEventListener("DOMContentLoaded", () => {
+    const character = document.getElementById("imgPerson");
+    const gameArea = document.getElementById("personagem");
+    const step = 10; // Número de pixels que o personagem se moverá a cada passo
+
+    document.addEventListener("keydown", (event) => {
+        const rect = character.getBoundingClientRect();
+        const gameAreaRect = gameArea.getBoundingClientRect();
+        console.log(rect);
+        console.log(gameAreaRect);
+
+        switch(event.key) {
+            case "ArrowUp":
+                if (rect.top - step >= gameAreaRect.top) {
+                    character.style.top = rect.top - step - gameAreaRect.top + "px";
+                }
+                break;
+            case "ArrowDown":
+                if (rect.bottom + step <= gameAreaRect.bottom) {
+                    character.style.top = rect.top + step - gameAreaRect.top + "px";
+                }
+                break;
+            case "ArrowLeft":
+                if (rect.left - step >= gameAreaRect.left) {
+                    character.style.left = rect.left - step - gameAreaRect.left + "px";
+                }
+                break;
+            case "ArrowRight":
+                if (rect.right + step <= gameAreaRect.right) {
+                    character.style.left = rect.left + step - gameAreaRect.left + "px";
+                }
+                break;
+        }
+    });
+});
