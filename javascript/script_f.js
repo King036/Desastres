@@ -1,7 +1,8 @@
 
 document.addEventListener("DOMContentLoaded", () => {
     contator = 0;
-
+    const gameArea1 = document.getElementById("areaPlantio");
+    gameArea1.style.width = '0px';
 
     // Seleciona todos os objetos interativos e o lixo
     const objects = document.querySelectorAll(".latinha, .banana, .caixinha, .garrafa, .maca, .papelao, .sacola, .vidro, .lixo");
@@ -29,11 +30,16 @@ document.addEventListener("DOMContentLoaded", () => {
             const remainingObjects = document.querySelectorAll(".latinha, .banana, .caixinha, .garrafa, .maca, .papelao, .sacola, .vidro");
             if (remainingObjects.length === 0) {
                 alert("Parabéns! Você limpou todos os objetos da água!");
-                for (let index = 0; index < 21; index++) {
+                setTimeout(() => { transitionToNextPhase() }, 2000);
 
-                    setTimeout(() => { transitionToNextPhase() }, 2000);
-
+                c++;
+                document.getElementById("dialogo").style.display = 'flex';
+                if (c === 151) {
+                    typeWriter();
+                    c++;
                 }
+                gameArea1.style.width = '1400px';
+
 
 
             }
@@ -64,15 +70,21 @@ document.addEventListener("DOMContentLoaded", () => {
         const interval = setInterval(frame, 20);
         const fundo = document.getElementById("video");
         const fundo1 = document.getElementById("fundo");
+        const gameArea = document.getElementById("personagem");
+
 
         // Substitua os caminhos para as novas imagens
         function frame() {
             if (pos >= 350) {
-                clearInterval(interval);
-                fundo1.style.backgroundImage= "url(img/CasaDepoisDaInundação.png)"
+                
+                fundo1.style.backgroundImage = "url(img/CasaDepoisDaInundação.png)"
+                gameArea.style.marginTop = '-357%';
+                gameArea.style.display = 'flex';
             } else {
                 pos++;
-                fundo.style.marginTop = pos+'%';
+                fundo.style.marginTop = pos + '%';
+                gameArea.style.display = 'none';
+
             }
         }
 
@@ -85,10 +97,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 });
-const text = "O bairro está alagado por conta do excesso de lixo,o que podemos fazerpara resolver isso?Click no lixo e depois na lixeira para recolher-los          ";
+//texto do personagem
 let index = 0;
-
+var c = 0;
 function typeWriter() {
+
+    if (c < 150) {
+        c++;
+        var text = "O bairro está alagado por conta do excesso de lixo,o que podemos fazerpara resolver isso?Click no lixo e depois na lixeira para recolher-los          ";
+    } else if (c > 150) {
+        
+        var text = "O alagamento acabou!Para evitar esse tipo de desastre, além de deixar as ruas limpas, outra forma é deixar a água fluir para o solo, e plantas também são ótimas em absorve a água!Então plante as 10 flores na grama                     ";
+    }
+
+
     if (index < text.length) {
         document.getElementById("textdialogo").innerHTML += text.charAt(index);
         index++;
@@ -98,13 +120,24 @@ function typeWriter() {
         }
 
     }
-    if (index == 150) {
+    if (index == 150 && c == 150) {
         document.getElementById("dialogo").style.display = 'none';
+        index = 0;
+        document.getElementById("textdialogo").innerHTML = '';
+        timer();
+    }
+    if (index == 229) {
+        document.getElementById("dialogo").style.display = 'none';
+        index = 0;
+        document.getElementById("textdialogo").innerHTML = '';
+        
+
     }
     console.log(index);
 }
 
 document.addEventListener("DOMContentLoaded", typeWriter);
+//movimento do personagem
 
 document.addEventListener("DOMContentLoaded", () => {
     const character = document.getElementById("imgPerson");
@@ -117,7 +150,7 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log(rect);
         console.log(gameAreaRect);
 
-        switch(event.key) {
+        switch (event.key) {
             case "ArrowUp":
                 if (rect.top - step >= gameAreaRect.top) {
                     character.style.top = rect.top - step - gameAreaRect.top + "px";
@@ -141,3 +174,56 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
+//plantar arvores
+
+document.addEventListener("DOMContentLoaded", () => {
+    const gameArea1 = document.getElementById("areaPlantio");
+
+    gameArea1.addEventListener("click", (event) => {
+        const tree = document.createElement("div");
+        tree.classList.add("tree");
+
+        // Posição do clique dentro da área de jogo
+        const x = event.clientX - gameArea1.getBoundingClientRect().left;
+        const y = event.clientY - gameArea1.getBoundingClientRect().top;
+
+        // Definindo a posição da árvore
+        tree.style.left = `${x - 15}px`; // Centralizar a árvore horizontalmente
+        tree.style.top = `${y + 380}px`; // Centralizar a árvore verticalmente
+
+        gameArea1.appendChild(tree);
+
+        updateTreeCount();
+    });
+
+    function updateTreeCount() {
+        const trees = document.querySelectorAll('.tree');
+        const count = trees.length;
+        if (count == 10) {
+            alert("Parabéns! Você plantou todas as flores!");
+             window.location.href = '/tela3.html'
+        }
+    }
+
+    // Atualiza a contagem inicial
+    updateTreeCount();
+});
+
+function timer() {
+    const timerElement = document.getElementById('timer');
+    let timeLeft = 30;
+
+    const countdown = setInterval(() => {
+        timeLeft--;
+        timerElement.textContent = timeLeft;
+
+        if (timeLeft <= 0) {
+            clearInterval(countdown);
+            alert("Tempo esgotado!");
+            window.location.href = '/tela3.html'
+        }else if(c>150){
+            clearInterval(countdown);
+            timerElement.style.display='none';
+        }
+    }, 1000);
+};
