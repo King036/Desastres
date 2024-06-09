@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 c++;
                 document.getElementById("dialogo").style.display = 'flex';
-                if (c === 151) {
+                if (c === 177) {
                     typeWriter();
                     c++;
                 }
@@ -102,12 +102,13 @@ let index = 0;
 var c = 0;
 function typeWriter() {
 
-    if (c < 150) {
+    if (c < 176) {
         c++;
-        var text = "O bairro está alagado por conta do excesso de lixo,o que podemos fazerpara resolver isso?Click no lixo e depois na lixeira para recolher-los          ";
-    } else if (c > 150) {
+        console.log(c);
+        var text = "O bairro está alagado por conta do excesso de lixo,o que podemos fazerpara resolver isso?Click no lixo e depois na lixeira no canto direito superior para recolher-los          ";
+    } else if (c > 176) {
         
-        var text = "O alagamento acabou!Para evitar esse tipo de desastre, além de deixar as ruas limpas, outra forma é deixar a água fluir para o solo, e plantas também são ótimas em absorve a água!Então plante as 10 flores na grama                     ";
+        var text = "O alagamento acabou!Para evitar esse tipo de desastre, além de deixar as ruas limpas, outra forma é deixar a água fluir para o solo, e plantas também são ótimas em absorve a água!Então plante as 10 flores ao clicar na grama                     ";
     }
 
 
@@ -120,13 +121,13 @@ function typeWriter() {
         }
 
     }
-    if (index == 150 && c == 150) {
+    if (index == 176 && c == 176) {
         document.getElementById("dialogo").style.display = 'none';
         index = 0;
         document.getElementById("textdialogo").innerHTML = '';
         timer();
     }
-    if (index == 229) {
+    if (index == 238) {
         document.getElementById("dialogo").style.display = 'none';
         index = 0;
         document.getElementById("textdialogo").innerHTML = '';
@@ -151,22 +152,22 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log(gameAreaRect);
 
         switch (event.key) {
-            case "ArrowUp":
+            case "w":
                 if (rect.top - step >= gameAreaRect.top) {
                     character.style.top = rect.top - step - gameAreaRect.top + "px";
                 }
                 break;
-            case "ArrowDown":
+            case "s":
                 if (rect.bottom + step <= gameAreaRect.bottom) {
                     character.style.top = rect.top + step - gameAreaRect.top + "px";
                 }
                 break;
-            case "ArrowLeft":
+            case "a":
                 if (rect.left - step >= gameAreaRect.left) {
                     character.style.left = rect.left - step - gameAreaRect.left + "px";
                 }
                 break;
-            case "ArrowRight":
+            case "d":
                 if (rect.right + step <= gameAreaRect.right) {
                     character.style.left = rect.left + step - gameAreaRect.left + "px";
                 }
@@ -211,7 +212,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function timer() {
     const timerElement = document.getElementById('timer');
-    let timeLeft = 30;
+    let timeLeft = 60;
 
     const countdown = setInterval(() => {
         timeLeft--;
@@ -221,7 +222,7 @@ function timer() {
             clearInterval(countdown);
             alert("Tempo esgotado!");
             window.location.href = '/tela3.html'
-        }else if(c>150){
+        }else if(c>176){
             clearInterval(countdown);
             timerElement.style.display='none';
         }
