@@ -47,7 +47,7 @@ html {
    
     margin-left:50%;
     font-size: 3em;
-    color: blue;
+    color: white;
 }
 
 #video {
@@ -232,144 +232,70 @@ html {
 
 .menu-screen {
     display: none;
-    position: fixed;
     top: 0;
     left: 0%;
-    width: 100%;
+    width: 600px;
     height: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    z-index: 100;
-    justify-content: center;
+    background-color: rgb(66, 66, 66);
+    position: absolute;
+    z-index: 2;
+    flex-direction: column;
     align-items: center;
+   
 
 }
 
-.menu-screen .fundoMenu {
-    width: 700px;
-    height: 100%;
-    left: 0%;
-    position: absolute;
-    border: 2px solid white;
+.cor{
+    color: white;
 }
 
 /* Estilo geral para botões de menu */
-.menu-button {
+#voltarInicio{
+    top:80%;
+    left: 23%;
     position: absolute;
 }
 
-#voltarInicio {
-    width: 400px;
-    left: 6%;
-    bottom: 2%;
-    cursor: pointer;
+#coluna{
+    width: 500px;
+    height: 400px;
+    z-index: 2;
+    border-bottom: 5px solid white;
 }
 
-#linha1 {
-    width: 700px;
-    left: 0%;
-    bottom: 13%;
-    position: absolute;
-}
 
-#teclas {
-    width: 200px;
-    left: 3%;
-    bottom: 17%;
-    position: absolute;
-}
 
-#paraAndar {
-    width: 160px;
-    left: 1%;
-    bottom: 32%;
-    position: absolute;
-}
 
-#mouse {
-    width: 100px;
-    left: 25%;
-    bottom: 17%;
-    position: absolute;
-}
 
-#paraClicar {
-    width: 280px;
-    left: 17%;
-    bottom: 32%;
-    position: absolute;
-}
 
-#linha2 {
-    width: 700px;
-    left: 0%;
-    bottom: 40%;
-    position: absolute;
-}
+
 
 #fase1 {
     width: 250px;
-    left: 20%;
-    bottom: 45%;
+    height: 115px;
     position: absolute;
     cursor: pointer;
 }
 
 #fase2 {
     width: 250px;
-    left: 2%;
-    bottom: 45%;
+    height: 115px;
+    margin-left: 45%;
     position: absolute;
     cursor: pointer;
 }
 
-#outraFase {
-    width: 280px;
-    left: 1%;
-    bottom: 62%;
-    position: absolute;
-}
 
-#linha5 {
-    width: 700px;
-    left: 0%;
-    bottom: 66%;
-    position: absolute;
-}
+
+
 
 
 #imgAudio {
     width: 100px;
-    left: 1%;
-    bottom: 70%;
     position: absolute;
     cursor: pointer;
 }
 
-#volumeTxt {
-    width: 220px;
-    left: 1%;
-    bottom: 80%;
-    position: absolute;
-    cursor: pointer;
-}
 
-#controleVolume {
-    width: 20px;
-    height: 35px;
-    left: 8%;
-    bottom: 71%;
-    position: absolute;
-    cursor: pointer;
-    display: flex;
-    transform: translate(-50%, -50%);
-    align-items: center;
 
-}
 
-#linha3 {
-    width: 220px;
-    left: 8%;
-    bottom: 74%;
-    position: absolute;
-    cursor: pointer;
-}
