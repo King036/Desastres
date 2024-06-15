@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="css/styles_f.css">
-    <script src="javascript/script_f.js"></script>
+    <link rel="stylesheet" href="/css/style_f2.css">
+    <script src="/javascript/script_f2.js"></script>
 
-    <title>Imundação</title>
+    <title>Deslizamento</title>
 </head>
 
 <body>
@@ -17,43 +17,45 @@
     <div id="fundo">
         <div class="barraMenu">
             <img src="img\Icone de Menu.png" class="menu">
-            <div id="timer">60</div>
+            <!--<div id="timer">60</div>-->
             <img src="img\lixo aberto.png" class="lixeira">
+            <img src="img\Pacote de Sementes de Grama 1.png" class="sacoSementes">
         </div>
-        <video id="video" width="500" autoplay="true" loop>
-            <source src="/img/AguaCorrente-Cena1-Inundação.mp4" type="video/mp4">
-        </video>
-        <video id="video" width="500" autoplay="true" loop>
-            <source src="/img/AguaCorrente-Cena1-Inundação.mp4" type="video/mp4">
-        </video>
-        <video id="video" width="500" autoplay="true" loop>
-            <source src="/img/AguaCorrente-Cena1-Inundação.mp4" type="video/mp4">
-        </video>
+        <div id="fundoum">
+        </div>
+
+
 
         <!-- imgs itens iterativos-->
         <div class="river">
             <img id="object" src="img\Latinha.png" class="latinha">
-            <img id="object" src="img\banana.png" class="banana">
             <img id="object" src="img\caixinha.png" class="caixinha">
             <img id="object" src="img\garrafa.png" class="garrafa">
-            <img id="object" src="img\lixo.png" class="lixo">
-            <img id="object" src="img\maça.png" class="maca">
-            <img id="object" src="img\papelão.png" class="papelao">
-            <img id="object" src="img\sacola plastica.png" class="sacola">
             <img id="object" src="img\vidro.png" class="vidro">
 
         </div>
+
+
         <!--imgs itens iterativos -->
         <div id="dialogo">
             <h1 class="coluna" id="textdialogo"></h1>
-            <img class="coluna" id="PDimagem" src="/img/Personagem-Dialogo.png" alt="">
+            <img class="coluna" id="PDimagem" src="img\Personagem-Dialogo.png" alt="">
         </div>
+
+
         <div id="personagem">
-            <img id="imgPerson" src="/img/Personagem-Parado.png">
+            <img id="imgPerson" src="img\Personagem-Parado.png">
         </div>
 
     </div>
+
+
+
+
+
     <div id="areaPlantio"></div>
+
+    
     <!-- Tela de menu -->
     <div class="menu-screen" id="menuScreen">
         <div id="coluna">
@@ -62,8 +64,8 @@
         </div>
         <div id="coluna"> 
             <h1 class="cor">Escolha sua Fase:</h1>
-            <img src="/img/Telafundo/Tela de Fase-Tempestade.png" class="menu-button" id="fase1">
-            <a href="/teladeslizamento.html"><img src="/img/imgs_menu/Rectangle 27.png" class="menu-button" id="fase2"></a>
+            <a href="/telainundacao.html"><img src="/img/imgs_menu/Rectangle 26.png" class="menu-button" id="fase1"></a>
+            <a href="#"><img src="/img/Telafundo/Tela de Fase-Tempestade.png" class="menu-button" id="fase2"></a>
         </div>
 
         <div id="coluna">
