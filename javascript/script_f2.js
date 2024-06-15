@@ -1,11 +1,13 @@
 
 document.addEventListener("DOMContentLoaded", () => {
     contator = 0;
+    const fundo1 = document.getElementById("fundoum");
+    fundo1.innerHTML = '<img  src="img/Telafundo/fundo 1.png" width= 1500px height= 600px></img>'
     const gameArea1 = document.getElementById("areaPlantio");
     gameArea1.style.width = '0px';
 
     // Seleciona todos os objetos interativos e o lixo
-    const objects = document.querySelectorAll(".latinha, .banana, .caixinha, .garrafa, .maca, .papelao, .sacola, .vidro, .lixo");
+    const objects = document.querySelectorAll(".latinha, .caixinha, .garrafa, .vidro");
     const trash = document.querySelector(".lixeira");
     let selectedObject = null;
 
@@ -27,18 +29,22 @@ document.addEventListener("DOMContentLoaded", () => {
             selectedObject = null;
 
             // Verifica se todos os objetos foram removidos
-            const remainingObjects = document.querySelectorAll(".latinha, .banana, .caixinha, .garrafa, .maca, .papelao, .sacola, .vidro");
+            const remainingObjects = document.querySelectorAll(".latinha, .caixinha, .garrafa, .vidro");
             if (remainingObjects.length === 0) {
-                alert("Parabéns! Você limpou todos os objetos da água!");
-                setTimeout(() => { transitionToNextPhase() }, 2000);
+                alert("Parabéns! Você limpou todos os objetos do gramado!");
+                // setTimeout(() => { transitionToNextPhase() }, 2000);
+
+
 
                 c++;
                 document.getElementById("dialogo").style.display = 'flex';
-                if (c === 177) {
+                if (c === 153) {
                     typeWriter();
                     c++;
                 }
-                gameArea1.style.width = '1400px';
+                gameArea1.style.width = '500px';
+                gameArea1.style.height = '200px';
+
 
 
 
@@ -48,7 +54,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         }
     });
-
 
 
 
@@ -64,35 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
         menuScreen.style.display = "none"; // Oculta a tela de menu
     });
 
-    // Função para transição para a próxima ètapa da fase
-    function transitionToNextPhase() {
-        let pos = 0;
-        const interval = setInterval(frame, 20);
-        const fundo = document.getElementById("video");
-        const fundo1 = document.getElementById("fundo");
-        const gameArea = document.getElementById("personagem");
 
-
-        // Substitua os caminhos para as novas imagens
-        function frame() {
-            if (pos >= 350) {
-                
-                fundo1.style.backgroundImage = "url(img/Telafundo/CasaDepoisDaInundação.png)"
-                gameArea.style.marginTop = '-357%';
-                gameArea.style.display = 'flex';
-            } else {
-                pos++;
-                fundo.style.marginTop = pos + '%';
-                gameArea.style.display = 'none';
-
-            }
-        }
-
-
-
-
-
-    }
 
 
 
@@ -102,13 +79,12 @@ let index = 0;
 var c = 0;
 function typeWriter() {
 
-    if (c < 176) {
+    if (c < 152) {
         c++;
-        console.log(c);
-        var text = "O bairro está alagado por conta do excesso de lixo,o que podemos fazerpara resolver isso?Click no lixo e depois na lixeira no canto direito superior para recolher-los          ";
-    } else if (c > 176) {
-        
-        var text = "O alagamento acabou!Para evitar esse tipo de desastre, além de deixar as ruas limpas, outra forma é deixar a água fluir para o solo, e plantas também são ótimas em absorve a água!Então plante as 10 flores ao clicar na grama                     ";
+        var text = "Há sinais de deslizamento de terra!! Lixos acumulam água da chuva e pesam o solo. Clique nos lixos, depois clique na lixeira para limpar o terreno.    ";
+    } else if (c > 152) {
+
+        var text = "Se chover, pode ocorrer deslizamento de terra resultando em um possível desabamento da casa. O solo está fraco, a grama pode ajudar o solo a absorver a água. Clique no saco de sementes, depois clique 20 vezes no solo danificado para o plantio da grama.            ";
     }
 
 
@@ -121,20 +97,19 @@ function typeWriter() {
         }
 
     }
-    if (index == 176 && c == 176) {
+    if (index == 151 && c == 152) {
         document.getElementById("dialogo").style.display = 'none';
         index = 0;
         document.getElementById("textdialogo").innerHTML = '';
-        timer();
+        // timer();
     }
-    if (index == 238) {
+    if (index == 258) {
         document.getElementById("dialogo").style.display = 'none';
         index = 0;
         document.getElementById("textdialogo").innerHTML = '';
-        
+
 
     }
-    console.log(index);
 }
 
 document.addEventListener("DOMContentLoaded", typeWriter);
@@ -148,8 +123,8 @@ document.addEventListener("DOMContentLoaded", () => {
     document.addEventListener("keydown", (event) => {
         const rect = character.getBoundingClientRect();
         const gameAreaRect = gameArea.getBoundingClientRect();
-        console.log(rect);
-        console.log(gameAreaRect);
+        // console.log(rect);
+        // console.log(gameAreaRect);
 
         switch (event.key) {
             case "w":
@@ -175,12 +150,14 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
-//plantar arvores
+
 
 document.addEventListener("DOMContentLoaded", () => {
+
     const gameArea1 = document.getElementById("areaPlantio");
 
     gameArea1.addEventListener("click", (event) => {
+
         const tree = document.createElement("div");
         tree.classList.add("tree");
 
@@ -189,42 +166,82 @@ document.addEventListener("DOMContentLoaded", () => {
         const y = event.clientY - gameArea1.getBoundingClientRect().top;
 
         // Definindo a posição da árvore
-        tree.style.left = `${x - 15}px`; // Centralizar a árvore horizontalmente
-        tree.style.top = `${y + 380}px`; // Centralizar a árvore verticalmente
+        tree.style.left = `${x - 45}px`; // Centralizar a árvore horizontalmente
+        tree.style.top = `${y - 45}px`; // Centralizar a árvore verticalmente
 
         gameArea1.appendChild(tree);
 
-        updateTreeCount();
-    });
 
+
+        updateTreeCount();
+        if (c==1) {
+            gameArea1.remove(tree);
+        }
+    });
+var c=0
     function updateTreeCount() {
         const trees = document.querySelectorAll('.tree');
         const count = trees.length;
-        if (count == 10) {
-            alert("Parabéns! Você plantou todas as flores!");
-             window.location.href = '/tela3.html'
+
+
+        if (count == 20) {
+            setTimeout(() => { transitionToNextPhase() }, 2000);
+
+            alert("Parabéns! Você plantou todas as sementes!");
+            // window.location.href = '/tela3.html'
+            gameArea1.style.width = '0px';
+            c=1;
         }
     }
 
-    // Atualiza a contagem inicial
-    updateTreeCount();
+
 });
 
-function timer() {
-    const timerElement = document.getElementById('timer');
-    let timeLeft = 60;
+function transitionToNextPhase() {
+    let pos = 0;
+    const interval = setInterval(frame, 10);
+    const fundo1 = document.getElementById("fundoum");
 
-    const countdown = setInterval(() => {
-        timeLeft--;
-        timerElement.textContent = timeLeft;
 
-        if (timeLeft <= 0) {
-            clearInterval(countdown);
-            alert("Tempo esgotado!");
-            window.location.href = '/tela3.html'
-        }else if(c>176){
-            clearInterval(countdown);
-            timerElement.style.display='none';
+    // Substitua os caminhos para as novas imagens
+    function frame() {
+        if (pos >= 350) {
+
+            fundo1.innerHTML = '<img src="img/Telafundo/CasaDepoisDoDeslizamento.png" width= 1500px height= 600px></img>'
+            setTimeout(() => {window.location.href = '/tela3.html'},2000);
+        } else {
+            pos++;
+
+
         }
-    }, 1000);
-};
+    }
+
+
+
+
+
+}
+
+
+
+
+
+
+// function timer() {
+//     const timerElement = document.getElementById('timer');
+//     let timeLeft = 60;
+
+//     const countdown = setInterval(() => {
+//         timeLeft--;
+//         timerElement.textContent = timeLeft;
+
+//         if (timeLeft <= 0) {
+//             clearInterval(countdown);
+//             alert("Tempo esgotado!");
+//             window.location.href = '/tela3.html'
+//         }else if(c>176){
+//             clearInterval(countdown);
+//             timerElement.style.display='none';
+//         }
+//     }, 1000);
+// };
