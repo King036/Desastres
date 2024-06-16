@@ -14,7 +14,7 @@ html {
     width: 100%;
     height: 100%;
     top: 0%;
-    background-image: url('/img/Telafundo/faseFundo.png');
+    background-image: url('img/Telafundo/faseFundo.png');
     background-position: center;
     background-repeat: repeat;
     background-size: contain;
@@ -210,7 +210,7 @@ html {
     position: absolute;
     width: 100px;
     height: 100px;
-    background: url('/img/flores.png') no-repeat center center / contain;
+    background: url('img/flores.png') no-repeat center center / contain;
 
 }
 #areaPlantio{

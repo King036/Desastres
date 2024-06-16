@@ -240,7 +240,7 @@ html {
     position: absolute;
     width: 200px;
     height: 200px;
-    background: url('/img/Sementes.png') no-repeat center center / contain;
+    background: url('img/Sementes.png') no-repeat center center / contain;
 
 }
 #areaPlantio{
