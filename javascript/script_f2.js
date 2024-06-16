@@ -208,7 +208,7 @@ function transitionToNextPhase() {
         if (pos >= 350) {
 
             fundo1.innerHTML = '<img src="img/Telafundo/CasaDepoisDoDeslizamento.png" width= 1500px height= 600px></img>'
-            setTimeout(() => {window.location.href = '/tela3.html'},2000);
+            setTimeout(() => {window.location.href = 'tela3.html'},2000);
         } else {
             pos++;
 

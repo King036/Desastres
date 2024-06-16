@@ -202,7 +202,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const count = trees.length;
         if (count == 10) {
             alert("Parabéns! Você plantou todas as flores!");
-             window.location.href = '/tela3.html'
+             window.location.href = 'tela3.html'
         }
     }
 
@@ -221,7 +221,7 @@ function timer() {
         if (timeLeft <= 0) {
             clearInterval(countdown);
             alert("Tempo esgotado!");
-            window.location.href = '/tela3.html'
+            window.location.href = 'tela3.html'
         }else if(c>176){
             clearInterval(countdown);
             timerElement.style.display='none';
